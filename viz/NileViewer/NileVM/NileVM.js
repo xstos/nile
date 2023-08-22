@@ -319,7 +319,10 @@ function NLPipelineRun (processes, inputStream) {
         process.outputStream = NLStream();
         
         var auxInputIndex = NLProcessGetAuxInputIndex(process);
-        if (auxInputIndex !== undefined) { process.auxInputStream = NLStreamClone(processes[auxInputIndex].outputStream); }
+        if (auxInputIndex !== undefined) {
+            debugger
+            process.auxInputStream = NLStreamClone(processes[auxInputIndex].outputStream);
+        }
         
         NLProcessRun(process);
         lastStream = process.outputStream;
